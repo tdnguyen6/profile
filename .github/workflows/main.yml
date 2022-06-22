@@ -7,8 +7,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Generate new cv pdf
-        uses: docker://oskarstark/php-cs-fixer-ga
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
       - name: Generate new cv pdf
