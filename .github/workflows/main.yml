@@ -7,9 +7,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Make changes in repo
-        run: echo hi > world.txt
+      - name: Generate new cv pdf
+        uses: docker://oskarstark/php-cs-fixer-ga
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+      - name: Generate new cv pdf
+        uses: chrome --headless --disable-gpu --print-to-pdf-no-header --print-to-pdf=TiDuNguyen_cv.pdf file://index.html
       - name: commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: add world.txt
+          commit_message: generate new cv pdf

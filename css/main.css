@@ -1,11 +1,16 @@
 * {
   -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
   color-adjust: exact !important; /*Firefox*/
+}
+
+.row {
   break-inside: avoid;
 }
 
-@page {
-  size: A3;
+@media print {
+  @page {
+    size: A3;
+  }
 }
 
 /* Timeline custom component */
