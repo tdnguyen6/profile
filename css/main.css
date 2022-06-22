@@ -4,6 +4,7 @@
 }
 
 .row {
+  -webkit-column-break-inside: avoid;
   break-inside: avoid;
 }
 
